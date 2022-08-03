@@ -34,8 +34,14 @@ def easyfaccheck(inputs):
             return False
     return '*' + str(facdif)
 
+def anybelow0(inputs):
+    for i in inputs:
+        if i <= 0:
+            return True
+    return False
+
 def easypowercheck(inputs):
-    if 1 in inputs or 0 in inputs:
+    if 1 in inputs or anybelow0(inputs):
         return False
     power = math.log(inputs[1], inputs[0])
     for i in range(1, len(inputs) - 1):
